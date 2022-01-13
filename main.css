@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Futura Bk Bt', 'Mistral', 'Rage', 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #FFF;
+}
+
+::-webkit-scrollbar {
+  height: 24px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E9BAB0;
+  border-radius: 20px;
+  height: 5px;
+  border: 6px solid #323232F0;
+  margin: 0 auto;
+}
+body {
+  position: relative;
+  background: linear-gradient(100deg, transparent 375px, #E9BAB0 670px), url(assets/niyin.jpg);
+  background-repeat: no-repeat;
+  background-position: 0px 0px, -50px -400px;
+}
+
+.main-div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  animation: bodyReveal .5s ease-in-out forwards;
+}
+
+@keyframes bodyReveal {
+  to {
+    opacity: 1;
+  }
+}
+
+h2 {
+  color: #323232;
+  position: absolute;
+  bottom: 30px;
+  width: 100vw;
+  text-align: center;
+  font-family: 'Sacramento';
+  font-size: 48px;
+  line-height: 36px;
+
+  animation: breathe 4s ease-in infinite;
+}
+
+@keyframes breathe {
+  50% {
+    /* bottom: 30px; */
+    opacity: 0.3;
+  }
+}
+
+button {
+  background: #116CE4;
+  padding: 15px 30px 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  gap: 10px;
+  opacity: 0.8;
+  display: flex;
+  min-width: min-content;
+  
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  /* min-width: 160px; */
+}
+
+a:hover * {
+  background: #EFEFEF;
+  color: #E22;
+  fill: #E22;
+  transition: all 0.25s ease-in-out;
+}
+
+a:hover svg {
+  transform: translateX(5px);
+}
+
+a:hover #back {
+  transform: translateX(-5px);
+}
+
+img, svg {
+  width: 10px;
+  fill: #FFF;
+  transform: translateX(0);
+  transition: all 0.25s ease-in-out;
+}
+
+.video-gallery {
+  position: relative;
+  width: 480px;
+  height: 280px;
+  overflow-x: scroll;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+video {
+  min-width: 200px;
+  height: 240px;
+}
+
+p {
+  text-align: justify;
+}
+
+
+.card-container {
+  position: relative;
+  background: #323232F0;
+  box-shadow: -5px 5px 50px #222;
+  border-radius: 15px;
+  padding: 30px;
+  min-height: 300px;
+  max-width: 540px;
+  transform: translateX(calc(100vw - 640px));
+}
+
+.card-container button {
+  margin-top: 25px;
+  margin-right: 0;
+  max-width: fit-content;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-family: 'Jetbrains Mono', monospace;
+}
+
+.link-section {
+  display: flex;
+  gap: 20px;
+}
+
+
+@media only screen and (max-width:730px) {
+  h2 {
+    max-width: fit-content;
+  }
+
+  h1, p {
+    text-align: center;
+  }
+
+ 
+  .main-div {
+   align-items: center; 
+  }
+
+  .card-container {
+    transform: translateX(0);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link-section {
+    justify-content: center;
+  }
+}
